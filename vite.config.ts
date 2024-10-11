@@ -1,9 +1,11 @@
+import path from 'path';
+import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [react(), VitePWA({
     registerType: 'prompt',
     injectRegister: false,
@@ -14,8 +16,8 @@ export default defineConfig({
     },
 
     manifest: {
-      name: 'web-apps-home',
-      short_name: 'web-apps-home',
+      name: 'OpenApps',
+      short_name: 'OpenApps',
       description: 'Homepage to sub PWAs',
       theme_color: '#ffffff',
     },
@@ -33,4 +35,9 @@ export default defineConfig({
       type: 'module',
     },
   })],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 })
