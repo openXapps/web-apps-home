@@ -28,12 +28,12 @@ export default function Home() {
   }
 
   return (
-    <div className="container pt-6">
-      <header className="flex items-center justify-center gap-3">
+    <div className="container pt-6 px-4">
+      <header className="py-4 max-w-sm mx-auto flex items-center justify-center gap-3 border border-slate-300 rounded-lg">
         <h1 className="text-5xl font-bold font-mono">OpenApps</h1>
         <img className="w-12" src={logo} alt="openapps logo" />
       </header>
-      <div className=" mt-6 mb-[85px] mx-auto max-w-screen-sm flex flex-col gap-3 md:gap-6">
+      <div className="mt-6 mb-[80px] mx-auto max-w-screen-sm flex flex-col gap-3 md:gap-6">
         {appList.map((v, i) => (
           <AppCard key={i} app={v} enabled={cookiesAccepted} />
         ))}
@@ -43,18 +43,3 @@ export default function Home() {
   );
 }
 
-
-/**
- * <>
-      <Container maxWidth="sm">
-        <Stack direction="row" spacing={2} alignItems="center" justifyContent="center" my={2}>
-          <Box component="img" src={logo} alt="Logo" sx={{ width: { xs: 40, sm: 64 }, height: { xs: 40, sm: 64 } }} />
-          <Typography variant="h4">OpenApps</Typography>
-        </Stack>
-        <Typography textAlign="center">open source utilities to be used freely</Typography>
-        <Apps cookiesAccepted={cookiesAccepted} />
-      </Container>
-      <Toolbar />
-      <Disclaimer cookiesAccepted={cookiesAccepted} handleAcceptCookies={handleAcceptCookies} />
-    </>
- */
